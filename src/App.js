@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
+
   return (
     <>
-      <h1>Hola mundo con React</h1>
-      <p>Para más de un elemento hay que usar un fragment '{"<></>"}'</p>
-      <strong>Cálculo con javascript {5*6}</strong>
+      <NavBar></NavBar>
+      <ItemListContainer/>
     </>
   );
 }
