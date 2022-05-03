@@ -1,5 +1,4 @@
 const Item = ({ product }) => {
- 
   return (
     <div className="card bg-base-100 shadow-md">
       <figure className="px-10 pt-10">

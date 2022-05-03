@@ -1,30 +1,6 @@
-import { useEffect, useState } from 'react';
 import Item from './Item';
-import { productList } from '../data/productos';
 
-const ItemList = () => {
-  const [products, setProducts] = useState([]);
-
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productList);
-    }, 2000);
-  });
-
-  const getProductsFromDB = async () => {
-    try {
-      const result = await getProducts;
-      setProducts(result);
-    } catch (error) {
-      console.log(error);
-      alert('No podemos mostrar los productos en este momento');
-    }
-  };
-
-  useEffect(() => {
-    getProductsFromDB();
-  }, []); 
-
+const ItemList = ({products}) => {
   return (
     <div className="grid gap-4 grid-cols-4">
       {
