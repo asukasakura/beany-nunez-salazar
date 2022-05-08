@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 const Item = ({ product }) => {
   return (
-    <div className="card bg-base-100 shadow-md">
+    <Link to={`/item/${product.id}`} className="card bg-base-100 shadow-md">
       <figure className="px-10 pt-10">
-        <img src={product.pictureUrl} alt="Shoes" className="rounded-xl" />
+        <img src={product.pictureUrl} alt={product.title} className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center self-end">
         <h2 className="card-title">{product.title}</h2>
@@ -12,7 +14,7 @@ const Item = ({ product }) => {
           <button className="btn btn-primary">Buy Now</button>
         </div> */}
       </div>
-    </div>
+    </Link>
   );
 };
 

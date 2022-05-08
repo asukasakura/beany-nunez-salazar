@@ -1,13 +1,16 @@
+import {Link} from 'react-router-dom'
+
 const HeaderMenu = () => {
   return (
     <>
-      <li><a>Limpiadores</a></li>
-      <li><a>Exfoliantes</a></li>
-      <li><a>Tónico</a></li>
-      <li><a>Sérum / Esencia</a></li>
-      <li><a>Hidratantes</a></li>
-      <li><a>Mascarillas</a></li>
-      <li><a>Protector solar</a></li>
+      {/* <li><Link to={'/category/'}>Limpiadores</Link></li> */}
+      {/* <li><Link to={'/category/'}>Exfoliantes</Link></li> */}
+      <li><Link to={'/category/2'}>Tónico</Link></li>
+      <li><Link to={'/category/3'}>Sérum / Esencia</Link></li>
+      <li><Link to={'/category/1'}>Hidratantes</Link></li>
+      <li><Link to={'/category/5'}>Bálsamos</Link></li>
+      <li><Link to={'/category/4'}>Protector solar</Link></li>
+      <li><Link to={'/category/6'}>Contorno ojos</Link></li>
     </>
   )
 }

@@ -2,55 +2,55 @@ export const productList = [
   {
     id : 1,
     title : "All In One Snail Repair Cream",
-    category : "Crema hidratante",
+    category : "1", //crema
     brand : "Mizon",
     price: "99.9",
-    pictureUrl: "./assets/images/products/all-in-one-snail-repair-cream.jpeg",
+    pictureUrl: "/assets/images/products/all-in-one-snail-repair-cream.jpeg",
     description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium.",
   },
   {
     id : 2,
     title : "Hialuronic Acid Toner",
-    category : "Toner",
+    category : "2", //toner
     brand : "Isnt tree",
     price: "99.9",
-    pictureUrl: "./assets/images/products/Tonico-IsnTree-Plus.jpeg",
+    pictureUrl: "/assets/images/products/Tonico-IsnTree-Plus.jpeg",
     description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium.",
   },
   {
     id : 3,
     title : "Neogen Real Vita C Serum",
-    category : "Serum",
+    category : "3", //serum
     brand : "Neogen",
     price: "99.9",
-    pictureUrl: "./assets/images/products/Neogen-Real-Vita-C-Serum.jpeg",
+    pictureUrl: "/assets/images/products/Neogen-Real-Vita-C-Serum.jpeg",
     description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium.",
   },
   {
     id : 4,
     title : "Anthelios Shaka Fluide",
-    category : "Protector solar",
+    category : "4", //protector solar
     brand : "La Roche-Posay",
     price: "99.9",
-    pictureUrl: "./assets/images/products/anthelios.jpeg",
+    pictureUrl: "/assets/images/products/anthelios.jpeg",
     description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium.",
   },
   {
     id : 5,
     title : "Canola Honey Lip Balm",
-    category : "Bálsamo labial",
+    category : "5", //balsamo labial
     brand : "Innisfree",
     price: "99.9",
-    pictureUrl: "./assets/images/products/Canola-Honey-Lip-Balm.jpeg",
+    pictureUrl: "/assets/images/products/Canola-Honey-Lip-Balm.jpeg",
     description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium.",
   },
   {
     id : 6,
     title : "Advanced Snail Peptide Eye Cream",
-    category : "Contorno de ojos",
+    category : "6", //contorno ojos
     brand : "COSRX",
     price: "99.9",
-    pictureUrl: "./assets/images/products/Advanced-Snail-Peptide-Eye-Cream.jpg",
+    pictureUrl: "/assets/images/products/Advanced-Snail-Peptide-Eye-Cream.jpg",
     description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque in laboriosam iure magnam accusantium repudiandae minima, cumque illum quisquam ipsum earum provident velit est. Quibusdam dolor consectetur non officiis praesentium.",
   }
 ]
