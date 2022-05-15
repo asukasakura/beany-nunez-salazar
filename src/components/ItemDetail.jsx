@@ -1,4 +1,15 @@
+import { useCartContext } from '../context/CartContext'
+import ItemCount from './ItemCount'
+
 const ItemDetail = ({producto}) => {
+
+  const { addToCart } = useCartContext()
+
+  function handleOnAdd(count) {
+    // console.log(count)
+    addToCart(producto, count)
+  }
+
   return (
     <>
       <div className="grid grid-cols-2 gap-10">
@@ -16,6 +27,7 @@ const ItemDetail = ({producto}) => {
           <div>
             <strong className="text-xl">${producto.price}</strong>
           </div>
+          <ItemCount initial={1} stock={ producto.stock } onAdd={ handleOnAdd } />
         </div>
       </div>
     </>
