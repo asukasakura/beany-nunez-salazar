@@ -1,53 +1,56 @@
-import React, { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 
 export const CartContext = createContext({})
 export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({ children }) => {
-  const [cartList, setCartList] = useState([])
+  const [ cart, setCart] = useState([])
 
-  const isInCart = (id) => {
-    return cartList.some((item) => item.id === id)
-  }
+  const isInCart = (id) => cart.find((producto) => producto.id === id)
 
-  const addToCart = (item, quantity) => {
-    console.log({ item, quantity })
-    if (isInCart(item.id)) {
-      return setCartList(
-        cartList.map((product) =>
-          product.id === item.id
-            ? { ...product, quantity: product.quantity + quantity }
-            : product
-        )
-      )
-    }
-    setCartList([...cartList, { ...item, quantity }])
-  }
+  const addToCart = (producto, cantidad) => {
+		const newCart = [...cart]
 
-  const deleteFromCart = (item) => {
-    const newCart = [...cartList]
+		const productoIsInCart = isInCart(producto.id)
 
-    if(!isInCart(item.id)){
-      return
-    }
+		if (productoIsInCart) {
+			newCart[
+				newCart.findIndex((prod) => prod.id === productoIsInCart.id)
+			].quantity += cantidad
+			
+			setCart(newCart)
+			return
+		}
 
-    const deleteProduct = newCart.filter( (prod) => prod.id !== item.id)
+		producto.quantity = cantidad
+		setCart([...newCart, producto])
+	}
 
-    setCartList(deleteProduct)
-  }
+  const deleteFromCart = (producto) => {
+		const newCart = [...cart]
+		const productIsInCart = isInCart(producto.id)
 
-  const deleteCart = () => setCartList([])
+		if (!productIsInCart) {
+			return
+		}
 
-  // console.log(cartList)
+		const deleteProduct = newCart.filter((prod) => prod.id !== producto.id)
+
+		setCart(deleteProduct)
+	}
+
+  const deleteCart = () => setCart([])
+
+  console.log(cart)
 
   return (
     <CartContext.Provider
       value={{
-        cartList,
-        addToCart,
-        deleteCart,
-        deleteFromCart,
-        setCartList
+        cart,
+				addToCart,
+				deleteFromCart,
+				deleteCart,
+				setCart,
       }}
     >
       {children}

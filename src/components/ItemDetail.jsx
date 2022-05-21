@@ -1,40 +1,41 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useCartContext } from '../context/CartContext'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({product}) => {
 
-  const { addToCart } = useCartContext()
+  const { title, brand, price, stock, pictureUrl, description, category, id } =
+		product
 
-  const [terminar, setTerminar] = useState(false)
+	const [terminar, setTerminar] = useState(false)
 
-  function handleOnAdd(count) {
-    // console.log(count)
-    setTerminar(true)
-    addToCart(producto, count)
-  }
+	const onAdd = (count) => {
+		setTerminar(true)
+	}
 
   return (
     <>
       <div className="grid grid-cols-2 gap-10">
         <div>
-          <img src={producto.pictureUrl} alt={producto.title} className="" />
+          <img src={pictureUrl} alt={title} className="" />
         </div>
         <div className="">
           <div className="product-header mb-10 border-b-2">
-            <h3 className="text-2xl">{producto.title}</h3>
-            <strong>{producto.brand}</strong>
+            <h3 className="text-2xl">{title}</h3>
+            <strong>{brand}</strong> | <small>{category}</small>
           </div>
           <div className="mb-10">
-            {producto.description}            
+            {description}            
           </div>
           <div>
-            <strong className="text-xl">${producto.price}</strong>
+            <strong className="text-xl">${price}</strong>
           </div>
-            <ItemCount initial={1} stock={ producto.stock } id={ producto.id } onAdd={ handleOnAdd } />
           <div className='my-5'>
-            { terminar && <Link to={'/cart'} className='btn bg-green-300'>Terminar mi compra</Link> }
+            { terminar ? 
+              <Link to={'/cart'} className='btn bg-green-300'>Terminar mi compra</Link>
+              :
+              <ItemCount stock={stock} onAdd={onAdd} id={id} />
+            }
           </div>
         </div>
       </div>

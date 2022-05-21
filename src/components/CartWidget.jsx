@@ -1,3 +1,5 @@
+
+
 const CartWidget = () => {
   return (
     <div className="dropdown dropdown-end">

@@ -1,13 +1,13 @@
 import Item from './Item';
 
-const ItemList = ({products}) => {
+const ItemList = ({ category }) => {
   return (
     <div className="grid gap-4 grid-cols-4">
       {
-        products.length ? ( 
+        category ? ( 
           <>
             {
-              products.map((product) => {
+              category.map((product) => {
                 return (
                     <Item key={product.id} product={product}/>
                 );
@@ -15,7 +15,7 @@ const ItemList = ({products}) => {
             }
           </>
         ) : (
-          <div class="flex justify-center ...">
+          <div className="flex justify-center ...">
             <div className="loader"></div>
           </div>
         )
