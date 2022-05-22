@@ -22,7 +22,7 @@ const ItemDetail = ({product}) => {
         <div className="">
           <div className="product-header mb-10 border-b-2">
             <h3 className="text-2xl">{title}</h3>
-            <strong>{brand}</strong> | <small>{category}</small>
+            <strong>{brand}</strong> | <small className='capitalize'>{category}</small>
           </div>
           <div className="mb-10">
             {description}            
